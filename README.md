@@ -38,5 +38,8 @@
   - use AJAX to fetch data
   - use components to update UI
   - using a third party component
+  - *A listing page of the ACME store locations*
+  - *Ability to add a store by name and address*
+  - *Show a map with markers for the offices*
 - Using Redux to store client side state
 - Building a React Redux Application
