@@ -7,9 +7,8 @@
   - storing data as Javascript object
   - using method override to delete data
   - RESTFUL routes
-  
   - *A list of products with link to product details*
-  - Ability to delete a product on the detail page*
+  - *Ability to delete a product on the detail page*
 - SQL App (no ORM)
   - using sqlite3 package to create database access objects
   - ability to insert and delete data using body parsing
