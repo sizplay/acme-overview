@@ -27,7 +27,6 @@
 - Multi Relation ORM App with Tests
   - using multiple models in sequelize
   - creating class methods for complex business logic
-
   - *A list of users with first name, last name, email, hire date, canMentor, mentor, and mentees*
   - *An edit page for a user where the user can be deleted*
   - *A users mentor can be set on the edit page*
