@@ -2,11 +2,12 @@
 
 - Acme Prework
   - writing some function to prepare for ACME projects
-- App with in memory data
+  - * merging a list of products and lineItems *
+- Express App with in memory data 
   - storing data as Javascript object
   - using method override to delete data
   - RESTFUL routes
-- App with SQL (no ORM)
+- SQL App (no ORM)
   - using sqlite3 package to create database access objects
   - ability to insert and delete data using body parsing
   - list to detail view
