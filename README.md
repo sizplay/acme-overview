@@ -2,7 +2,7 @@
 
 - Acme Prework
   - writing some function to prepare for ACME projects
-  - * merging a list of products and lineItems *
+  *merging a list of products and lineItems*
 - Express App with in memory data 
   - storing data as Javascript object
   - using method override to delete data
