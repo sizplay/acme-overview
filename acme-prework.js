@@ -14,7 +14,7 @@ var products = [
   {
     id: 2,
     price: 3,
-    name: 'bar' 
+    name: 'bar'
   },
   {
     id: 3,
@@ -46,26 +46,71 @@ var lineItems = [
 //keys are the ids of products
 //the values are the products themselves
 function generateProductsMap(products){
-  //TODO
+  return products.reduce(function(obj, prod){
+    obj[prod.id] = prod;
+    return obj;
+  }, {});
 }
 
 //returns an object
 //keys are the ids of products
 //value is the total revenue for that product
 function salesByProduct(products, lineItems){
-  //TODO
+  var arr = [];
+  var salesProd = products.reduce(function(obj, prod) {
+    lineItems.map(function (product) {
+      if (prod.id === product.productId) {
+        if (arr[prod.id]) {
+          arr[prod.id] += product.quantity;
+        } else {
+          arr[prod.id] = product.quantity;
+        }
+      }
+    });
+    obj[prod.id] = prod.price * arr[prod.id];
+    return obj;
+  }, {});
+  return salesProd;
 }
 
-//return the total revenue for all products
+// //return the total revenue for all products
 function totalSales(products, lineItems){
-  //TODO
-
+  // var arr = [], sum = 0;
+  // var salesProd = products.reduce(function (obj, prod) {
+  //   lineItems.map(function (product) {
+  //     if (prod.id === product.productId) {
+  //       if (arr[prod.id]) {
+  //         arr[prod.id] += product.quantity;
+  //       } else {
+  //         arr[prod.id] = product.quantity;
+  //       }
+  //     }
+  //   });
+  //   sum += prod.price * arr[prod.id];
+  //   return sum;
+  // }, {});
+  // return salesProd;
+  var obj = salesByProduct(products, lineItems);
+  var sum = 0;
+  for (var key in obj){
+    sum += obj[key];
+  }
+  return sum;
 }
 
-//return the product responsible for the most revenue
+// //return the product responsible for the most revenue
 function topSellerByRevenue(products, lineItems){
-  //TODO
+  var obj = salesByProduct(products, lineItems);
+  var compare = 0, index = 0;
+  for (var key in obj){
+    if (compare < obj[key]) {
+    compare = obj[key];
+    index = key;
+    }
+  }
+  return products[index-1].name;
 }
+
 console.log(`generates product map - should be
 {
   1:{
